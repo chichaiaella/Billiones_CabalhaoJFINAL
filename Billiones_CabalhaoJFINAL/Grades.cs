@@ -32,9 +32,9 @@ namespace Billiones_CabalhaoJFINAL
             dt.Columns.Add("Middle Name", Type.GetType("System.String"));
             dt.Columns.Add("Program", Type.GetType("System.String"));
             dt.Columns.Add("Subjects", Type.GetType("System.String"));
-            dt.Columns.Add("Prelim 20%", Type.GetType("System.Int32"));
-            dt.Columns.Add("Midterm 30%", Type.GetType("System.Int32"));
-            dt.Columns.Add("Final 50%", Type.GetType("System.Int32"));
+            dt.Columns.Add("Prelim 20%", Type.GetType("System.Single"));
+            dt.Columns.Add("Midterm 30%", Type.GetType("System.Single"));
+            dt.Columns.Add("Final 50%", Type.GetType("System.Single"));
             dt.Columns.Add("Average");
             dt.Columns.Add("Remarks");
 
@@ -64,7 +64,8 @@ namespace Billiones_CabalhaoJFINAL
                 float final = Convert.ToSingle(txtFinal.Text);
                 //average
                 var average = (prelim + midterm + final) / 3;
-                var FinalAverage = Convert.ToString(average);
+                var FinalAverage =average.ToString("F2");
+                
 
                 //remarks of grades
                 string remarks = "";
